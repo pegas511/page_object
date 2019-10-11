@@ -63,3 +63,9 @@ class BasePage():
             return False
 
         return True
+    
+    def go_to_basket(self):
+        """Метод для перехода в корзину"""
+        assert self.is_element_present(*BasePageLocators.BASKET_LINK)
+        basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
+        basket_link.click()
