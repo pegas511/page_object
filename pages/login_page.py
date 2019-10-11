@@ -32,3 +32,12 @@ class LoginPage(BasePage):
         "Password1 registration form is not presented"
         assert self.is_element_present(*LoginPageLocators.REG_PASSWORD_2), \
         "Password2 registration form is not presented"
+
+    def register_new_user(self, email, password):
+
+        # реализуйте проверку, что есть форма регистрации на странице
+        self.browser.find_element(*LoginPageLocators.REG_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.REG_PASSWORD_1).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REG_PASSWORD_2).send_keys(password)
+        #Нажатие кнопки регистрации
+        self.browser.find_element(*LoginPageLocators.REG_SUBMIT_BUTTON).click()
