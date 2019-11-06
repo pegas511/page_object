@@ -1,2 +1,4 @@
 # page_object
-Final taks of stepik course
+Final task of stepik course
+Запустить тесты можно с помощью команды
+pytest -v --tb=line --language=en -m need_review
